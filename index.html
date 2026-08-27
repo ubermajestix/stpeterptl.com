@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>St. Peter PTL — Parent Teacher League, St. Peter Lutheran School, Lodi CA</title>
+<meta name="description" content="The Parent Teacher League for St. Peter Lutheran School in Lodi, California. An independent 501(c)(3) that raises funds, runs community events, and supports students and teachers.">
+<meta property="og:title" content="St. Peter Parent Teacher League">
+<meta property="og:description" content="The parent and teacher organization supporting St. Peter Lutheran School in Lodi, California.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stpeterptl.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!--
+  OPTIONAL: if you have an Adobe Fonts (Creative Cloud) subscription, create a web
+  project containing Proxima Nova and paste its <link> or <script> tag here.
+  The CSS below already prefers Proxima Nova and falls back to Montserrat.
+-->
+<style>
+  :root{
+    --red:#812423;
+    --red-deep:#5C1918;
+    --red-wash:#F6EEED;
+    --ink:#241D1C;
+    --slate:#6B5F5D;
+    --paper:#F7F4F2;
+    --card:#FFFFFF;
+    --rule:#E5DCD9;
+    --display:"Titan One","Montserrat",system-ui,sans-serif;
+    --body:"Proxima Nova","Montserrat",system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--body);font-size:17px;line-height:1.65;
+  }
+  .wrap{max-width:64rem;margin:0 auto;padding:0 1.5rem}
+
+  a{color:var(--red);text-decoration-color:rgba(129,36,35,.4);text-underline-offset:3px}
+  a:hover{color:var(--red-deep)}
+  a:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:2px}
+
+  h2{font-family:var(--display);font-weight:400;font-size:clamp(1.5rem,3.4vw,1.95rem);line-height:1.15;margin:0 0 1.1rem;color:var(--red)}
+  h3{font-family:var(--display);font-weight:400;font-size:1.15rem;margin:2rem 0 .6rem;color:var(--ink)}
+  p{margin:0 0 1.1rem;max-width:42rem}
+  section{padding:3rem 0;border-top:1px solid var(--rule)}
+
+  /* masthead */
+  header.masthead{background:var(--red);color:#fff}
+  .masthead .wrap{padding-top:3.5rem;padding-bottom:3rem}
+  .eyebrow{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.75);margin:0 0 1.1rem}
+  h1{
+    font-family:var(--display);font-weight:400;
+    font-size:clamp(2.5rem,7vw,4.6rem);line-height:.98;
+    letter-spacing:-.005em;margin:0 0 1.1rem;color:#fff;max-width:16em;
+  }
+  .standfirst{font-size:clamp(1.05rem,2.2vw,1.25rem);line-height:1.55;color:rgba(255,255,255,.9);max-width:40rem;margin:0;font-weight:400}
+
+  /* quick links */
+  .quicklinks{background:var(--red-deep);padding:.85rem 0}
+  .quicklinks .wrap{display:flex;flex-wrap:wrap;gap:.4rem 1.75rem}
+  .quicklinks a{color:#F4E6E5;font-size:.9rem;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:1px}
+  .quicklinks a:hover{color:#fff;border-bottom-color:#fff}
+  .quicklinks a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+  /* next meeting */
+  .notice{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--red);border-radius:3px;padding:1.4rem 1.6rem;margin:2.5rem 0 0}
+  .notice .label{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--red);margin:0 0 .45rem}
+  .notice .when{font-family:var(--display);font-weight:400;font-size:1.4rem;margin:0 0 .5rem;line-height:1.2}
+  .notice p{margin:0;font-size:.95rem;color:var(--slate)}
+
+  /* relationship block */
+  .relation-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:1.25rem;align-items:stretch;margin-top:2rem}
+  .node{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:1.6rem 1.5rem}
+  .node .role{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--red);margin:0 0 .6rem}
+  .node .name{font-family:var(--display);font-weight:400;font-size:1.2rem;line-height:1.25;margin:0 0 .6rem}
+  .node .meta{font-size:.92rem;color:var(--slate);margin:0;max-width:none}
+  .joint{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem}
+  .joint .label{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--slate);white-space:nowrap}
+  .joint .bar{width:1px;flex:1;background:var(--rule);min-height:1.25rem}
+  @media (max-width:46rem){
+    .relation-grid{grid-template-columns:1fr}
+    .joint{flex-direction:row;padding:.25rem 0}
+    .joint .bar{width:auto;height:1px;flex:1;min-height:0}
+  }
+
+  /* lists */
+  ul.plain{list-style:none;padding:0;margin:0 0 1.1rem;max-width:42rem}
+  ul.plain li{padding:.6rem 0 .6rem 1.4rem;position:relative;border-bottom:1px solid var(--rule)}
+  ul.plain li:last-child{border-bottom:0}
+  ul.plain li::before{content:"";position:absolute;left:0;top:1.25rem;width:.42rem;height:.42rem;background:var(--red);border-radius:50%}
+  ul.plain li strong{font-weight:700}
+
+  /* calendar */
+  .cal{border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--card);max-width:44rem}
+  .cal-row{display:grid;grid-template-columns:6.5rem 1fr;gap:1rem;padding:.85rem 1.25rem;border-bottom:1px solid var(--rule);align-items:baseline}
+  .cal-row:last-child{border-bottom:0}
+  .cal-row .month{font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+  .cal-row .what{margin:0;max-width:none}
+  .cal-row .what .date{color:var(--slate);font-size:.92rem}
+  .cal-row.open{background:var(--red-wash)}
+  .cal-row.open .what{color:var(--slate);font-style:italic}
+  @media (max-width:34rem){
+    .cal-row{grid-template-columns:1fr;gap:.15rem}
+  }
+
+  /* events */
+  .events{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem;margin-top:1.25rem}
+  .event{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:1.4rem;border-top:4px solid var(--red)}
+  .event .season{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--red);margin:0 0 .4rem}
+  .event .title{font-family:var(--display);font-weight:400;font-size:1.15rem;margin:0 0 .55rem;line-height:1.2}
+  .event p{font-size:.94rem;color:var(--slate);margin:0;max-width:none}
+  .event .lead{margin-top:.65rem;font-size:.88rem;color:var(--ink)}
+
+  /* board */
+  .board{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin-bottom:1.75rem}
+  .board div{background:var(--card);padding:1.2rem 1.3rem}
+  .board .office{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--red);margin:0 0 .35rem}
+  .board .person{font-family:var(--display);font-weight:400;font-size:1.05rem;margin:0;line-height:1.25}
+
+  .roster{max-width:42rem}
+  .roster dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.6rem 1.25rem}
+  .roster dt{font-weight:700;font-size:.94rem}
+  .roster dd{margin:0;font-size:.94rem;color:var(--slate)}
+  @media (max-width:34rem){
+    .roster dl{grid-template-columns:1fr;gap:.15rem}
+    .roster dd{margin-bottom:.75rem}
+  }
+
+  .closing{background:var(--red);color:#fff;border-radius:4px;padding:2.25rem}
+  .closing p{font-family:var(--display);font-weight:400;font-size:clamp(1.15rem,2.6vw,1.5rem);line-height:1.35;margin:0;max-width:36rem;color:#fff}
+
+  footer{border-top:1px solid var(--rule);background:var(--card);padding:2.25rem 0 3rem;font-size:.9rem;color:var(--slate)}
+  footer p{margin:0 0 .45rem;max-width:46rem}
+  footer .flinks{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;margin-bottom:1.25rem}
+
+  @media (prefers-reduced-motion:no-preference){
+    .masthead .wrap > *{animation:rise .5s ease-out both}
+    .masthead .wrap > *:nth-child(2){animation-delay:.06s}
+    .masthead .wrap > *:nth-child(3){animation-delay:.12s}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Lodi, California</p>
+    <h1>St. Peter Parent Teacher League</h1>
+    <p class="standfirst">The parent and teacher organization for St.&nbsp;Peter Lutheran School. Think of us as the school's booster club — we raise funds, run community events, and put parent energy and expertise to work on behalf of our kids.</p>
+  </div>
+</header>
+
+<nav class="quicklinks" aria-label="Quick links">
+  <div class="wrap">
+    <a href="#calendar">Event calendar</a>
+    <a href="#meetings">Meetings</a>
+    <a href="#board">Board</a>
+    <a href="https://drive.google.com/file/d/16KzNmT4UZhczibRcuCUpV0J68cVvxEVO/view">Our bylaws</a>
+    <a href="https://docs.google.com/document/d/1OqSO3Y2PrVtMlKkDngldr9xc2LBfSHeLO5WIFIDHORc/preview">Welcome packet</a>
+    <a href="https://stpeterlodi.myshopify.com/">Spirit wear</a>
+    <a href="mailto:stpeterlodiptl@gmail.com">Email us</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- NEXT MEETING — update after each meeting -->
+  <div class="notice">
+    <p class="label">Next meeting</p>
+    <p class="when">Tuesday, September 8 at 6:00 PM</p>
+    <p>School Library, with a Google Meet option. The link is shared in the day-of text from the school and is on the school Google Calendar.</p>
+  </div>
+
+  <section style="border-top:0">
+    <h2>Our mission</h2>
+    <p>Every St. Peter parent and guardian is already a member. If your child is enrolled, you're in.</p>
+    <p>Our mission, from our bylaws, is to help parents and teachers live by example in our faith and love of Jesus, and to enable students to be the best possible stewards of the talents and skills God has given them.</p>
+
+    <div class="relation-grid">
+      <div class="node">
+        <p class="role">This organization</p>
+        <p class="name">St. Peter Parent Teacher League</p>
+        <p class="meta">
+          An independent 501(c)(3) nonprofit, run entirely by volunteers.<br>
+          EIN 93-3982888<br>
+          stpeterptl.com
+        </p>
+      </div>
+      <div class="joint">
+        <span class="bar"></span>
+        <span class="label">raises funds for</span>
+        <span class="bar"></span>
+      </div>
+      <div class="node">
+        <p class="role">The school we support</p>
+        <p class="name">St. Peter Lutheran School</p>
+        <p class="meta">
+          A separate organization, with its own staff and administration.<br>
+          <a href="https://www.splodischool.org">Visit the school's website →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="calendar">
+    <h2>Event calendar, 2026–2027</h2>
+    <p>Three months are still open. If you've ever thought about running something, those are yours for the taking — bring the idea to a meeting.</p>
+    <div class="cal">
+      <div class="cal-row"><span class="month">August</span><p class="what">Blessing of the Backpacks <span class="date">— with ice cream</span></p></div>
+      <div class="cal-row"><span class="month">September</span><p class="what">Book Fair <span class="date">— 7th–11th</span></p></div>
+      <div class="cal-row"><span class="month">October</span><p class="what">Trunk-or-Treat <span class="date">— Friday 10/16</span></p></div>
+      <div class="cal-row open"><span class="month">November</span><p class="what">Open — looking for a lead</p></div>
+      <div class="cal-row"><span class="month">December</span><p class="what">Christmas Carnival <span class="date">— date TBD</span></p></div>
+      <div class="cal-row open"><span class="month">January</span><p class="what">Open — looking for a lead</p></div>
+      <div class="cal-row"><span class="month">February</span><p class="what">Fundraising Gala <span class="date">— Saturday 2/27</span></p></div>
+      <div class="cal-row open"><span class="month">March</span><p class="what">Open — looking for a lead</p></div>
+      <div class="cal-row"><span class="month">April</span><p class="what">Jog-a-Thon <span class="date">— Friday 4/23</span></p></div>
+      <div class="cal-row"><span class="month">May</span><p class="what">Teacher Appreciation Week <span class="date">— 3rd–7th</span></p></div>
+    </div>
+
+    <h3>Our three biggest events</h3>
+    <p>Each has a dedicated lead who owns it end to end, with the board providing support, funding, and coordination.</p>
+    <div class="events">
+      <div class="event">
+        <p class="season">October 16</p>
+        <p class="title">Trunk or Treat</p>
+        <p>Our community Halloween event, drawing 1,200–1,500 people. Known across Lodi as the best Trunk or Treat.</p>
+        <p class="lead">Led by Jessica Mikbel</p>
+      </div>
+      <div class="event">
+        <p class="season">February 27</p>
+        <p class="title">Fundraising Gala</p>
+        <p>Our biggest fundraiser, providing about half our annual revenue through sponsorships, ticket sales, and auctions.</p>
+        <p class="lead">Led by Emily Brown &amp; Jessica Mikbel</p>
+      </div>
+      <div class="event">
+        <p class="season">April 23</p>
+        <p class="title">Jog-a-Thon</p>
+        <p>One of our most fun and biggest events, bringing in roughly 30% of annual revenue.</p>
+        <p class="lead">Led by Christina Rotondo</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Our goals this year</h2>
+    <ul class="plain">
+      <li>A healthy, positive community where parents, students, and staff know and support each other.</li>
+      <li>A better experience for students and teachers through funding for classrooms, shared spaces, and learning materials.</li>
+      <li>Events that bring us together — like the Gala and the Jog-a-Thon — that raise funds and unite the St. Peter school, church, and Lodi community.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How you can help</h2>
+    <p>Helping the PTL doesn't have to mean stacking folding chairs, though we love that too. The most valuable thing you can bring is whatever you're already good at.</p>
+    <ul class="plain">
+      <li><strong>Skills and expertise</strong> — graphic design, photography and videography, social media, apparel and online sales, IT and technical help, and construction or trades expertise for campus projects.</li>
+      <li><strong>Time and hands</strong> — volunteering at events, leading an event, chairing a committee, or helping source auction and raffle items.</li>
+      <li><strong>Resources and connections</strong> — event gear to lend, trusted vendor relationships, and sponsorship connections through your employer or local Lodi businesses.</li>
+    </ul>
+    <p>With a large group, small contributions of time and talent add up — and a better-funded, more vibrant school is the one your children walk into every morning.</p>
+  </section>
+
+  <section id="meetings">
+    <h2>Meetings</h2>
+    <p>We meet for one hour on the second Tuesday of every month at 6:00 PM in the School Library — the same day as Two Can Tuesday. Join in person, or on Google Meet if getting to campus is hard that night.</p>
+    <p>At each meeting, school administration gives a campus update, we review the PTL budget, vote as a group on staff funding requests, coordinate upcoming events, and leave open time for new ideas. This year we're starting each meeting with quick introductions, so it's one of the easiest ways to meet other parents, guardians, and teachers.</p>
+
+    <h3>Meeting minutes</h3>
+    <p>Notes are posted here after each meeting, so you can catch up on anything you miss. The first set of the year goes up after our September meeting.</p>
+  </section>
+
+  <section id="board">
+    <h2>Board, 2026–2027</h2>
+    <p>The board keeps the PTL running — setting the agenda, managing the money, coordinating with the school, and making sure events happen. Officers are elected by the membership.</p>
+
+    <div class="board">
+      <div><p class="office">President</p><p class="person">Tyler Montgomery</p></div>
+      <div><p class="office">Vice President</p><p class="person">Emily Brown</p></div>
+      <div><p class="office">Treasurer</p><p class="person">Staci Jones</p></div>
+      <div><p class="office">Secretary</p><p class="person">Heather Madrid</p></div>
+    </div>
+
+    <ul class="plain">
+      <li><strong>President</strong> — runs monthly meetings, serves as the main link to school administration, and delegates work across the board.</li>
+      <li><strong>Vice President</strong> — supports the President and owns cross-cutting operations.</li>
+      <li><strong>Secretary</strong> — takes and publishes meeting notes, and communicates with school administration.</li>
+      <li><strong>Treasurer</strong> — manages PTL finances, keeps the books, and presents the budget each month.</li>
+    </ul>
+
+    <h3>Committees and appointed roles</h3>
+    <p>Committee chairs own steady, year-round work. Members-at-large are appointed to run special programs.</p>
+    <div class="roster">
+      <dl>
+        <dt>Literacy</dt><dd>Ashley Herzick and Claudia Gonzalez — Book Fair and Accelerated Reader program</dd>
+        <dt>Communications</dt><dd>Heather Madrid</dd>
+        <dt>Preschool Parent Liaison</dt><dd>Elizabeth Schmitter</dd>
+        <dt>Spirit Wear</dt><dd>Christina Rotondo — member-at-large</dd>
+        <dt>Campus Improvement</dt><dd>Open — talk to any board member if you're interested</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <h2>Get connected</h2>
+    <p>The single best next step is to come to a meeting. It's one hour, and you'll hear the admin update, meet other families, and find the way you want to get involved.</p>
+    <ul class="plain">
+      <li>Volunteer calls and event needs go out through school email, and we send flyers home too.</li>
+      <li>Event sign-ups are managed through SignUpGenius.</li>
+      <li>Want to lead an event, chair a committee, or offer a skill? Tell any board member, or raise your hand at the meeting.</li>
+    </ul>
+    <div class="closing">
+      <p>The PTL isn't someone else doing things for the school — it's us. Parents, guardians, teachers, and staff, working together to make St. Peter Lutheran School the best it can be for our kids.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks">
+      <a href="https://drive.google.com/file/d/16KzNmT4UZhczibRcuCUpV0J68cVvxEVO/view">Our bylaws</a>
+      <a href="https://docs.google.com/document/d/1OqSO3Y2PrVtMlKkDngldr9xc2LBfSHeLO5WIFIDHORc/preview">Welcome packet</a>
+      <a href="mailto:stpeterlodiptl@gmail.com">stpeterlodiptl@gmail.com</a>
+      <a href="https://stpeterlodi.myshopify.com/">Spirit wear store</a>
+    </div>
+    <p>St. Peter Parent Teacher League is an independent 501(c)(3) nonprofit corporation in Lodi, California. Contributions are tax-deductible to the extent allowed by law.</p>
+    <p>St. Peter Lutheran School is a separate organization. This site is published and maintained by the PTL.</p>
+    <p>© 2026 St. Peter Parent Teacher League</p>
+  </div>
+</footer>
+
+</body>
+</html>
