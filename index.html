@@ -66,11 +66,22 @@
   .quicklinks a:hover{color:#fff;border-bottom-color:#fff}
   .quicklinks a:focus-visible{outline:2px solid #fff;outline-offset:3px}
 
-  /* next meeting */
-  .notice{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--red);border-radius:3px;padding:1.4rem 1.6rem;margin:2.5rem 0 0}
-  .notice .label{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--red);margin:0 0 .45rem}
-  .notice .when{font-family:var(--display);font-weight:400;font-size:1.4rem;margin:0 0 .5rem;line-height:1.2}
-  .notice p{margin:0;font-size:.95rem;color:var(--slate)}
+  /* happening soon */
+  .upcoming-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.25rem;margin-top:1.5rem}
+  .upcat{background:var(--card);border:1px solid var(--rule);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;border-top:4px solid var(--red)}
+  .upcat.meeting{background:var(--red-wash);padding:1.4rem 1.5rem;justify-content:center}
+  .upcat .flyer{width:100%;display:block}
+  .upcat-body{padding:1.3rem 1.4rem 1.5rem}
+  .upcat .season{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--red);margin:0 0 .4rem}
+  .upcat .title{font-family:var(--display);font-weight:400;font-size:1.15rem;margin:0 0 .6rem;line-height:1.2}
+  .upcat p{font-size:.94rem;color:var(--slate);margin:0 0 .9rem;max-width:none}
+  .upcat p:last-child{margin-bottom:0}
+  .btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:.9rem;padding:.6rem 1.1rem;border-radius:3px;text-decoration:none}
+  .btn:hover{background:var(--red-deep);color:#fff}
+
+  /* calendar embed */
+  .calendar-embed{border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin-top:1rem;max-width:44rem}
+  .calendar-embed iframe{display:block;width:100%;height:500px}
 
   /* relationship block */
   .relation-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:1.25rem;align-items:stretch;margin-top:2rem}
@@ -115,6 +126,18 @@
   .event p{font-size:.94rem;color:var(--slate);margin:0;max-width:none}
   .event .lead{margin-top:.65rem;font-size:.88rem;color:var(--ink)}
 
+  /* spirit wear shop */
+  .shop{display:grid;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));gap:1.25rem;margin-top:1.5rem}
+  .product{background:var(--card);border:1px solid var(--rule);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:box-shadow .15s ease,transform .15s ease}
+  .product:hover{box-shadow:0 6px 20px rgba(36,29,28,.10);transform:translateY(-2px)}
+  .product:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+  .product .thumb{aspect-ratio:1/1;background:var(--red-wash);overflow:hidden}
+  .product .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .product .pbody{padding:1rem 1.1rem 1.15rem}
+  .product .pname{display:block;font-family:var(--display);font-weight:400;font-size:1rem;line-height:1.2;margin:0 0 .4rem;color:var(--ink)}
+  .product .price{display:block;font-size:.95rem;font-weight:700;color:var(--red);margin:0}
+  .shop-msg{color:var(--slate);font-size:.95rem;margin-top:1rem}
+
   /* board */
   .board{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin-bottom:1.75rem}
   .board div{background:var(--card);padding:1.2rem 1.3rem}
@@ -157,6 +180,7 @@
 
 <nav class="quicklinks" aria-label="Quick links">
   <div class="wrap">
+    <a href="#upcoming">What's next</a>
     <a href="#calendar">Event calendar</a>
     <a href="#meetings">Meetings</a>
     <a href="#board">Board</a>
@@ -169,14 +193,36 @@
 
 <div class="wrap">
 
-  <!-- NEXT MEETING — update after each meeting -->
-  <div class="notice">
-    <p class="label">Next meeting</p>
-    <p class="when">Tuesday, September 8 at 6:00 PM</p>
-    <p>School Library, with a Google Meet option. The link is shared in the day-of text from the school and is on the school Google Calendar.</p>
-  </div>
+  <!-- HAPPENING SOON — update after each meeting, and swap in the next event -->
+  <section id="upcoming" style="border-top:0;padding-top:2.5rem">
+    <h2>Happening soon</h2>
+    <div class="upcoming-grid">
+      <div class="upcat meeting">
+        <p class="season">Next meeting</p>
+        <p class="title">Tuesday, November 17 · 6:00 PM</p>
+        <p>School Library, or online — the Google Meet link goes out by text the day of. <a href="#meetings">Full meeting calendar →</a></p>
+      </div>
+      <div class="upcat">
+        <img class="flyer" src="images/silent-night-spectacular.jpg" alt="St. Peter Church Lodi Silent Night Spectacular flyer: December 5th, 4–7 PM, $10 per person, free hot cocoa and cookies, food trucks, games, bounce houses, train rides, face painting, Santa, and a live nativity">
+        <div class="upcat-body">
+          <p class="season">Saturday, December 5 · 4–7 PM</p>
+          <p class="title">Silent Night Spectacular</p>
+          <p>Food trucks, bounce houses, train rides, face painting, a live nativity, and Santa — plus free hot cocoa and cookies for everyone. $10 per person, under 2 free. Proceeds benefit veterans through the A-Z Foundation Group.</p>
+          <a class="btn" href="https://www.zeffy.com/en-US/ticketing/st-peter-silent-night-spectacular">Get tickets →</a>
+        </div>
+      </div>
+      <div class="upcat">
+        <img class="flyer" src="images/boots-and-bubbles.jpg" alt="Save the Date flyer for Boots &amp; Bubbles, an evening of western glamour and giving, February 27 2027 at the Waterloo Gun and Bocce Club, tickets on sale November 30, western chic attire encouraged">
+        <div class="upcat-body">
+          <p class="season">Saturday, February 27, 2027</p>
+          <p class="title">Boots &amp; Bubbles — Save the Date</p>
+          <p>Our annual Fundraising Gala returns with an evening of western glamour and giving at the Waterloo Gun and Bocce Club: dinner, dancing, a raffle, and silent and live auctions. Tickets on sale November 30. Western chic attire encouraged.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <section style="border-top:0">
+  <section>
     <h2>Our mission</h2>
     <p>Every St. Peter parent and guardian is already a member. If your child is enrolled, you're in.</p>
     <p>Our mission, from our bylaws, is to help parents and teachers live by example in our faith and love of Jesus, and to enable students to be the best possible stewards of the talents and skills God has given them.</p>
@@ -215,9 +261,9 @@
       <div class="cal-row"><span class="month">September</span><p class="what">Book Fair <span class="date">— 7th–11th</span></p></div>
       <div class="cal-row"><span class="month">October</span><p class="what">Trunk-or-Treat <span class="date">— Friday 10/16</span></p></div>
       <div class="cal-row open"><span class="month">November</span><p class="what">Open — looking for a lead</p></div>
-      <div class="cal-row"><span class="month">December</span><p class="what">Christmas Carnival <span class="date">— date TBD</span></p></div>
+      <div class="cal-row"><span class="month">December</span><p class="what">Silent Night Spectacular <span class="date">— Saturday 12/5, 4–7 PM</span></p></div>
       <div class="cal-row open"><span class="month">January</span><p class="what">Open — looking for a lead</p></div>
-      <div class="cal-row"><span class="month">February</span><p class="what">Fundraising Gala <span class="date">— Saturday 2/27</span></p></div>
+      <div class="cal-row"><span class="month">February</span><p class="what">Fundraising Gala: Boots &amp; Bubbles <span class="date">— Saturday 2/27</span></p></div>
       <div class="cal-row open"><span class="month">March</span><p class="what">Open — looking for a lead</p></div>
       <div class="cal-row"><span class="month">April</span><p class="what">Jog-a-Thon <span class="date">— Friday 4/23</span></p></div>
       <div class="cal-row"><span class="month">May</span><p class="what">Teacher Appreciation Week <span class="date">— 3rd–7th</span></p></div>
@@ -234,8 +280,8 @@
       </div>
       <div class="event">
         <p class="season">February 27</p>
-        <p class="title">Fundraising Gala</p>
-        <p>Our biggest fundraiser, providing about half our annual revenue through sponsorships, ticket sales, and auctions.</p>
+        <p class="title">Fundraising Gala: Boots &amp; Bubbles</p>
+        <p>Our biggest fundraiser, providing about half our annual revenue through sponsorships, ticket sales, and auctions. This year's theme is western glamour, at the Waterloo Gun and Bocce Club.</p>
         <p class="lead">Led by Emily Brown &amp; Jessica Mikbel</p>
       </div>
       <div class="event">
@@ -274,6 +320,12 @@
 
     <h3>Meeting minutes</h3>
     <p>Notes are posted here after each meeting, so you can catch up on anything you miss. The first set of the year goes up after our September meeting.</p>
+
+    <h3>Full meeting calendar</h3>
+    <p>This calendar is live from Google — new dates and changes show up here on their own, no site update needed.</p>
+    <div class="calendar-embed">
+      <iframe src="https://calendar.google.com/calendar/embed?src=c_f5lb6b3b8q79ebt0fv2d56hl5o%40group.calendar.google.com&amp;ctz=America%2FLos_Angeles" style="border:0" width="100%" height="500" frameborder="0" scrolling="no" title="St. Peter PTL meeting calendar" loading="lazy"></iframe>
+    </div>
   </section>
 
   <section id="board">
